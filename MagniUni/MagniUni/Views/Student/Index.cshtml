@@ -1,0 +1,24 @@
+﻿@model MagniUni.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div ng-controller="studentController">
+    <table class="table table-bordered">
+        <tbody>
+            <tr ng-repeat="i in students">
+                <td>{{i.FirstName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Views/Student/Student.js")
+}
